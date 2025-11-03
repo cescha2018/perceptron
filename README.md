@@ -1,0 +1,1 @@
+Ejemplo práctico del algoritmo de Perceptron como modelo de inteligencia artificial para clasificación binaria durante la semana de la ciencia en la Escuela Superior de Cómputo. Importante mencionar que el algoritmo Perceptron se considera dentro del aprendizaje supervisado de Machine Learning. 
