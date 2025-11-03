@@ -1,16 +1,15 @@
 import numpy as np
 
 class Perceptron:
-    
     def __init__(self, learning_rate, epochs):
         self.pesos = None
         self.sesgo = None
         self.tasa_aprendizaje = learning_rate
         self.epochs = epochs
 
-    # heaviside activation function
+    # Función de activacion Escalón Unitario
     def funcion_de_activacion(self, z):
-        return np.heaviside(z, 0) # haviside(z) heaviside -> activation
+        return np.heaviside(z, 0) # haviside(z) heaviside -> activación
 
     def fit(self, X, y):
         n_caracteristicas = X.shape[1]
@@ -22,7 +21,7 @@ class Perceptron:
         # Iteraciones hasta que se alcancen el número de épocas
         for epoch in range(self.epochs):
             
-            # Traversing through the entire training set
+            # Recorrido por todo el conjunto de entrenamiento
             for i in range(len(X)):
                 z = np.dot(X, self.pesos) + self.sesgo # Realiza el producto punto y suma el sesgo
                 y_pred = self.funcion_de_activacion(z) # Aplicando la función de activación
@@ -33,6 +32,6 @@ class Perceptron:
                 
         return self.pesos, self.sesgo
 
-    def predict(self, X):
+    def prediccion(self, X):
         z = np.dot(X, self.pesos) + self.sesgo
         return self.funcion_de_activacion(z)        
