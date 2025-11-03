@@ -16,7 +16,7 @@ X_entrenamiento, X_prueba, y_entrenamiento, y_prueba = train_test_split(X, y, te
 
 perceptron = Perceptron(0.001, 100)
 perceptron.fit(X_entrenamiento, y_entrenamiento)
-prediccion = perceptron.predict(X_prueba)
+prediccion = perceptron.prediccion(X_prueba)
 
 # Medición y Puntaje sobre la predicción de modelo
 puntaje = accuracy_score(prediccion, y_prueba)
